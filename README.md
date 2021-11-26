@@ -140,19 +140,22 @@ After installing, go to http://localhost:9999 to access ARC
 ## Roadmap
 
 - [x] Login/Logout
-    - [x] Google Authenticate
+    - [x] Login with Google
     - [ ] Change password
-- [x] Browse artworks other users uploaded
+    - [ ] Delete user
+- [x] Browse artwork posts in a gallery window
     - [x] Apply artwork type filter
     - [x] Search based on keyword(s)
     - [x] Find all artworks commented
-    - [ ] Suggestions
-- [x] Comment on others' artworks anonymously
+    - [x] Find all artworks created by yourself
+    - [ ] Get recommendations
+- [x] Comment on others' artwork posts anonymously
     - [x] Comment spam filter
     - [ ] Delete comments
-- [x] Post your own artwork
-    - [x] Delete your own artwork
+- [x] Post your own artwork posts
+    - [x] Delete your own artwork posts
     - [x] Review the comments from other users
+- [ ] Report post feature
 
 See the [open issues](https://github.com/AUSTlNC/arc-art-critique/issues) for a full list of proposed features (and known issues).
 
