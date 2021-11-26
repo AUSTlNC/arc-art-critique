@@ -205,4 +205,4 @@ Project Link: [https://github.com/AUSTlNC/arc-art-critique](https://github.com/A
 [issues-url]: https://github.com/AUSTlNC/arc-art-critique/issues
 [license-shield]: https://img.shields.io/github/license/AUSTlNC/arc-art-critique.svg?style=for-the-badge
 [license-url]: https://github.com/AUSTlNC/arc-art-critique/blob/master/LICENSE.txt
-[product-screenshot]: arc-frontend/public/img/screenshot
+[product-screenshot]: arc-frontend/public/img/screenshot.png
