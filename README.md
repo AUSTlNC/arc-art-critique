@@ -114,6 +114,7 @@ You need to have the latest version of npm installed
    cd ../
    ```
 3. Start frontend and backend servers
+
    First start the frontend server
    ```sh
    cd arc-frontend
@@ -124,10 +125,6 @@ You need to have the latest version of npm installed
    cd arc-backend
    nodemon server.js
    ```
-4. Go to localhost:9999 and you can start using ARC
-   ```sh
-   http://localhost:9999
-   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -136,9 +133,7 @@ You need to have the latest version of npm installed
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+After installing, go to http://localhost:9999 to access ARC
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -147,10 +142,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- [] Login/Logout
+- [] Browse artworks other users uploaded
+- [] Comment on others' artworks anonymously
+- [] Post your own artwork
+    - [] Delete your own artwork
+    - [] Review the comments from other users
 
 See the [open issues](https://github.com/AUSTlNC/arc-art-critique/issues) for a full list of proposed features (and known issues).
 
@@ -193,18 +190,6 @@ Austin Cai - [@twitter_handle](https://twitter.com/twitter_handle) - austincc319
 Project Link: [https://github.com/AUSTlNC/arc-art-critique](https://github.com/AUSTlNC/arc-art-critique)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
