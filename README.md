@@ -25,8 +25,6 @@
     <a href="https://github.com/AUSTlNC/arc-art-critique"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AUSTlNC/arc-art-critique">View Demo</a>
-    ·
     <a href="https://github.com/AUSTlNC/arc-art-critique/issues">Report Bug</a>
     ·
     <a href="https://github.com/AUSTlNC/arc-art-critique/issues">Request Feature</a>
