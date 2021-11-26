@@ -65,7 +65,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](localhost:9999)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+ARC is a project focusing on providing an anonymousity-based platform for artists to improve themselves. Artists can freely browse and comment on others' artwork posts, and they can post their own work to get constructive feedbacks and critiques.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
