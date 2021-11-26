@@ -66,9 +66,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](localhost:9999)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `AUSTlNC`, `arc-art-critique`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -76,9 +76,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
 * [React.js](https://reactjs.org/)
 * [Node.js](https://nodejs.org/)
+* [MongoDB Atlas](https://www.mongodb.com/atlas/)
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -88,12 +88,12 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Now let's get you ready to access ARC!
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+You need to have the latest version of npm installed
+
 * npm
   ```sh
   npm install npm@latest -g
@@ -101,18 +101,32 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/AUSTlNC/arc-art-critique.git
    ```
-3. Install NPM packages
+2. Install NPM packages inside both backend and frontend folders
    ```sh
+   cd arc-frontend
    npm install
+   cd ../arc-backend
+   npm install
+   cd ../
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Start frontend and backend servers
+   First start the frontend server
+   ```sh
+   cd arc-frontend
+   npm start
+   ```
+   Open up a new terminal window and cd into arc-art-critique directory then:
+   ```sh
+   cd arc-backend
+   nodemon server.js
+   ```
+4. Go to localhost:9999 and you can start using ARC
+   ```sh
+   http://localhost:9999
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
