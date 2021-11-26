@@ -7,7 +7,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -15,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AUSTlNC/arc-art-critique">
-    <img src="arc-frontend/img/logoblue.png" alt="Logo" width="80" height="80">
+    <img src="arc-frontend/public/img/logoblue.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">ARC Art Critique</h3>
@@ -196,16 +195,14 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[contributors-shield]: https://img.shields.io/github/contributors/AUSTlNC/arc-art-critique.svg?style=for-the-badge
+[contributors-url]: https://github.com/AUSTlNC/arc-art-critique/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/AUSTlNC/arc-art-critique.svg?style=for-the-badge
+[forks-url]: https://github.com/AUSTlNC/arc-art-critique/network/members
+[stars-shield]: https://img.shields.io/github/stars/AUSTlNC/arc-art-critique.svg?style=for-the-badge
+[stars-url]: https://github.com/AUSTlNC/arc-art-critique/stargazers
+[issues-shield]: https://img.shields.io/github/issues/AUSTlNC/arc-art-critique.svg?style=for-the-badge
+[issues-url]: https://github.com/AUSTlNC/arc-art-critique/issues
+[license-shield]: https://img.shields.io/github/license/AUSTlNC/arc-art-critique.svg?style=for-the-badge
+[license-url]: https://github.com/AUSTlNC/arc-art-critique/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
