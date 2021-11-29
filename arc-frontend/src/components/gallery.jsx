@@ -164,7 +164,7 @@ console.log('loading more');
               ||(props.page==2&&<p>This is what you critiqued</p>)}
               
             </div> 
-            <p>  {errorMessage} </p>
+            <h1 style={{color: "red"}}> {errorMessage} </h1>
 
             {props.page?
             <div>
@@ -239,7 +239,7 @@ console.log('loading more');
               ||(props.page==2&&<p>This is what you critiqued</p>)}
               
             </div> 
-      {/* <p>  {"We ran out of images for you"} </p> */}
+            <h1 style={{color: "red"}}> {errorMessage} </h1>
       <center>
       <ReactLoading/>
       </center>

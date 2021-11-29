@@ -1,4 +1,4 @@
-
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,7 +10,7 @@ import {
   import Login from "./components/login";
   import Homemyposts from "./homemyposts";
   import Homemycomments from "./homemycomments";
-
+  import PageNotFound from './NotFoundRoute'
   
 
 
@@ -28,13 +28,15 @@ import {
             {/* <Link to="/">Home</Link>
            <Link to="/Posts">Posts</Link>
            <Link to="/Login"> Login</Link> */}
-           
+          <Switch>
+
             <Route exact path="/" component={Home} />
             <Route path="/Login" component={Login} />
             <Route path="/myposts" component={Homemyposts} />
             <Route path="/comments" component={Homemycomments} />
-      
-            
+            <Route component={PageNotFound} />
+
+            </Switch>
           </Router>
         </div>
       /* </SessionContext.Provider> */
