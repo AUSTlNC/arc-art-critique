@@ -8,7 +8,6 @@ import Add from "./components/add";
 import Drawer from "./components/drawer";
 import Axios from "axios";
 import { getPopoverUtilityClass } from "@mui/material";
-import {useHistory} from "react-router-dom";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -24,7 +23,6 @@ const Homemyposts = ({children}) => {
   const [ load, setLoading ] = useState(true);
   const[message,setMessage]=useState('');
   const[errorMessage,setErrMessage]=useState('');
-  const history=useHistory();
 
   useEffect(()=>{
     Axios.get("/api/login").then((response)=>{
@@ -54,10 +52,7 @@ const Homemyposts = ({children}) => {
           setErrMessage("Error encountered on the server.");
         });
             
-      } else {
-        // console.log("not logged in");
-        history.push("/login");
-      }      
+        }     
       
     });
     
@@ -68,7 +63,7 @@ const Homemyposts = ({children}) => {
   return (
     <div>
       <Navigation user={loggedInUser} loggedIn={isLoggedIn} page/>
-      <Gallery loaded={load} image={sentImage} loggedIn={isLoggedIn} message = {message} error={errorMessage} page={1}/>
+      <Gallery loaded={load} image={sentImage} loggedIn={isLoggedIn} message = {message} error={errorMessage}page={1}/>
       <Add />
       <Drawer />
     </div>
