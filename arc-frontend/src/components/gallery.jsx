@@ -206,7 +206,11 @@ console.log('loading more');
                   }
                 
                 </ImageList>
-                {dimage.length<displayimage.length?<Button onClick={loadMore} size="lg" variant="light">Load More</Button>:<p>You have loaded all the images.</p>}
+                <center>
+                <div style={{width:"33%"}} className="d-grid gap-2">
+                {dimage.length<displayimage.length?<Button onClick={loadMore} size="lg" variant="outline-light">Load More</Button>:<p>You have loaded all the images.</p>}
+                </div>
+                </center>
                 </div>
                 :<center style={{marginTop:"7%"}}><ReactLoading/></center>}
             </div>
