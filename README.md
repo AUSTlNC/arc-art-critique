@@ -63,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](localhost:9999)
+[![Product Name Screen Shot][product-screenshot]](localhost:3000)
 
 ARC is a project focusing on providing an anonymousity-based platform for artists to make improvements. Artists can freely browse and comment on others' artwork posts, and they can post their own work to get constructive feedbacks and critiques. Arc exists with the mission to help an artist gather and give genuine critique anonymously from other artists in order to replenish creativity and create better art, and maintains the vision of creating a cordial place for all artists to achieve constant self-improvement. 
 
@@ -130,7 +130,7 @@ You need to have the latest version of npm installed
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-After installing, go to http://localhost:9999 to access ARC
+After installing, go to http://localhost:3000 to access ARC
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
