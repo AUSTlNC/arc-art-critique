@@ -8,6 +8,7 @@ import Add from "./components/add";
 import Drawer from "./components/drawer";
 import Axios from "axios";
 import { getPopoverUtilityClass } from "@mui/material";
+import {useHistory} from "react-router-dom";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -23,6 +24,7 @@ const Homemycomments = ({children}) => {
   const [ load, setLoading ] = useState(true);
   const[message,setMessage]=useState('');
   const[errorMessage,setErrMessage]=useState('');
+  const history=useHistory();
 
   useEffect(()=>{
     Axios.get("/api/login").then((response)=>{
@@ -51,7 +53,10 @@ const Homemycomments = ({children}) => {
         }).catch((error)=> {
           setErrMessage("Error encountered on the server.");
         });; 
-        }     
+        } else {
+       
+          history.push("/login");
+        }    
     });
     
    

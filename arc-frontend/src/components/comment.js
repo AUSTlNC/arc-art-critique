@@ -79,7 +79,7 @@ function close(e){
   setErrMessage('');   
 };
 function deletep(e){
-  console.log("delete clicked");
+  // console.log("delete clicked");
   let deletep={
     postId:props.entry._id,
     userId:loggedInUser
@@ -95,7 +95,7 @@ function deletep(e){
     setErrMessage("Error encountered on the server.");
   });
   props.onHide(e);
-  history.push("/");
+  window.location.reload();
 }
 // console.log(commentlist);
   return (
