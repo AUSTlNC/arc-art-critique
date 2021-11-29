@@ -95,7 +95,7 @@ function deletep(e){
     setErrMessage("Error encountered on the server.");
   });
   props.onHide(e);
-  history.push("/");
+  window.location.reload();
 }
 // console.log(commentlist);
   return (
