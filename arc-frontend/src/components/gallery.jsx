@@ -44,7 +44,7 @@ export function Gallery(props) {
   const[sentEntry,setSentEntry]=useState([]);
   const [active, setActive] = useState('All');
   const [ load, setLoading ] = useState(false);
-  const[index,setIndex]=useState(0);
+  const[index,setIndex]=useState(10);
 console.log(props.iamge);
 
   function loadMore(){
@@ -88,8 +88,9 @@ console.log('loading more');
   useEffect(()=>{
     setLoading(true);
     setDisplayimage(props.image);
-    setIndex(10);
-    setdimage(displayimage.slice(0,index));
+    console.log(props.image);
+    setdimage(props.image.slice(0,index));
+    console.log(dimage);
     setLoading(false);
   },[props.image]
   );
