@@ -13,6 +13,7 @@ import { display } from '@mui/system';
 import useInfiniteScroll from "./useInfiniteScroll";
 
 
+
 const ButtonS = styled.button`
 font-size: 15;
 background:none;
@@ -44,17 +45,20 @@ export function Gallery(props) {
   const [active, setActive] = useState('All');
   const [ load, setLoading ] = useState(false);
   const[index,setIndex]=useState(0);
+console.log(props.iamge);
+
   function loadMore(){
     setLoading(true);
 console.log('loading more');
-    setIndex(index+4);
+    setIndex(index+10);
     setdimage(displayimage.slice(0,index+4));
     console.log(index);
     console.log(dimage);
     setIsFetching(false)
     setLoading(false);
   }
-  const [isFetching, setIsFetching] = useState(useInfiniteScroll(loadMore));
+
+  const [isFetching, setIsFetching] = useState(false);
   const [dimage,setdimage]=useState([]);
   const[displayimage, setDisplayimage] = useState([]);
   const[errorMessage,setErrMessage]=useState('');
@@ -84,32 +88,41 @@ console.log('loading more');
   useEffect(()=>{
     setLoading(true);
     setDisplayimage(props.image);
-    setdimage(displayimage.slice(0,index+2));
-    console.log(props.image);
-    console.log(displayimage);
-    console.log(dimage);
+    setIndex(10);
+    setdimage(displayimage.slice(0,index));
     setLoading(false);
-  },[props.image,displayimage]
+  },[props.image]
   );
 
   function filter(e, type){
+    setdimage([]);
+    setDisplayimage([]);
     setLoading(true);
+    setIndex(10);
     setActive(type);
     console.log(type)
     if (type == 'All'){
-      Axios.post("posts/all",3).then((response)=>{
-        setDisplayimage(response.data);
-        setdimage(displayimage.slice(0,index+2));
-        setLoading(false);
-      }).catch((error)=> {
-        setErrMessage("Error encountered on the server.");
-      });
+      // Axios.post("posts/all",3).then((response)=>{
+      //   setDisplayimage(response.data);
+      //   setdimage(displayimage.slice(0,index+2));
+      //   setLoading(false);
+      // }).catch((error)=> {
+      //   setErrMessage("Error encountered on the server.");
+      // });
+      setDisplayimage(props.image);
+      setIndex(10);
+      setdimage(displayimage.slice(0,index));
+      setLoading(false);
+
     }
     if (type == 'Artwork'){
       Axios.get('/posts/type?type=artwork')
       .then(function (response) {
         setDisplayimage(response.data['type search']);
-        setdimage(displayimage.slice(0,index+2));
+        console.log(response.data['type search']);
+        if(displayimage.length>0){
+
+        setdimage(response.data['type search'].slice(0,index));}
       
         setLoading(false);
       }).catch((error)=> {
@@ -120,8 +133,9 @@ console.log('loading more');
       Axios.get('/posts/type?type=photography')
       .then(function (response) {
         setDisplayimage(response.data['type search']);
-        setdimage(displayimage.slice(index,index+2));
-      
+        console.log(response.data['type search']);
+        setdimage(response.data['type search'].slice(0,index));
+        console.log(dimage);
         setLoading(false);
       }).catch((error)=> {
         setErrMessage("Error encountered on the server.");
@@ -129,7 +143,7 @@ console.log('loading more');
     }
   }
 
-  if (dimage.length>0) {
+  if (dimage) {
     console.log(dimage);
     return (
       <div>
@@ -181,17 +195,21 @@ console.log('loading more');
                 <p>
                 </p>
             <div>
-           {props.loaded==false&&load==false? <ImageList variant="masonry" cols={3} gap={8}>
-                  {displayimage.map((entry) => (                    
+           {props.loaded==false&&load==false? <div><ImageList variant="masonry" cols={3} gap={8}>
+                  {dimage.map((entry) => (                    
                     <ImageListItem key={entry.image}>
                       {props.loggedIn ? <a onClick={(e) => {clickMe(e, entry)}} ><img width="100%" src={"data:image/png;base64, " + entry.image}></img></a> :
                         <a href='/login'><img width="100%" src={"data:image/png;base64, " + entry.image}></img></a>}
                     </ImageListItem>
                   ))
                   }
+                
                 </ImageList>
+                {dimage.length<displayimage.length?<Button onClick={loadMore} size="lg" variant="light">Load More</Button>:<p>You have loaded all the images.</p>}
+                </div>
                 :<center style={{marginTop:"7%"}}><ReactLoading/></center>}
             </div>
+            
           </div>
         </div>
 
