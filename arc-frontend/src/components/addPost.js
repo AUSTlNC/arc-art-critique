@@ -9,31 +9,23 @@ import addPost from "./addPost.css";
 import { FilePond, File, registerPlugin,Create } from 'react-filepond'
 import 'filepond/dist/filepond.min.css'
 import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orientation'
+import FilePondPluginFileEncode from 'filepond-plugin-file-encode';
+import FilePondPluginImageResize from 'filepond-plugin-image-resize';
+
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 import {Grid,TextField} from '@mui/material';
 
-registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
-
+registerPlugin(FilePondPluginImageExifOrientation,FilePondPluginImageResize, FilePondPluginImagePreview,FilePondPluginFileEncode)
 function AddPost(props){
   const [artType,setartType]=useState('artwork');
   const [photoURL,setPhotoURL]=useState(null);
   const [isLoggedIn, setLoggedIn]=useState(false);
-  const [loggedInUser,setLoggedInUser]=useState('')
+  const [loggedInUser,setLoggedInUser]=useState('');
   const [files, setFiles] = useState([]);
+  const[errorMessage,setErrMessage]=useState('');
+  const[clicked,setClicked]=useState(false);
   const history=useHistory();
-  const [isChecked, setIsChecked] = useState(false);
-  const [selectedImage, setSelectedImage] = useState();
-  const removeSelectedImage = () => {setSelectedImage();};
-  const imageChange = (e) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setSelectedImage(e.target.files[0]);
-    }
-  };
-    const handleOnChange = () => {
-      setIsChecked(!isChecked);
-    };
-
   useEffect(()=>{
     Axios.get("/api/login").then((response)=>{
       if(response.data.loggedIn==true){
@@ -41,7 +33,9 @@ function AddPost(props){
         setLoggedIn(true);
         setLoggedInUser(response.data.user);
       };
-    })
+    }).catch((error)=> {
+      setErrMessage("Error encountered on the server.");
+    }); 
   },[]);
   const type=[
     {id:'1',value:'artwork'},
@@ -57,33 +51,48 @@ function AddPost(props){
   ]
 
   const [critique, setCritique] = useState(false);
-
-
+  function close(e){
+    props.onHide(e); 
+    setErrMessage('');   
+  };
   function uploadImage(e){
     setPhotoURL(URL.createObjectURL(e.target.files[0]));
   }
-
-
   function upload(){
-   console.log(loggedInUser._id);
-   console.log(files);
-   console.log((document.getElementsByName("files")));
-
-    let post={
-      title:document.getElementById('photoID').value,
-      description:document.getElementById('description').value,
-      artType:artType,
-      photoURL:photoURL,
-      userinfo:loggedInUser._id
+    //  console.log(FilePond.parse(files[0]));
+     console.log(loggedInUser._id);
+     console.log(files);
+     console.log((document.getElementsByName("files")));
+    //  const pond= Create(files,{
+    //    maxFiles:1,
+    //    allowBrowse:false
+    //  })
+    
+      if (files[0]){
+        let post={
+          title:document.getElementById('photoID').value,
+          description:document.getElementById('description').value,
+          artType:artType,
+          photoURL:photoURL,
+          image:files[0].getFileEncodeBase64String(),
+          imageType:files[0].fileType,
+          userinfo:loggedInUser._id
+        }
+        console.log(post);
+        setClicked(true);
+        Axios.post('/posts',post).then(function(response){
+  
+        }).catch((error)=> {
+          setErrMessage("Error encountered on the server.");
+        }); 
+        setErrMessage('');
+        props.onHide();
+        // history.push("/");
+       
+      } else{
+        setErrMessage("Please upload an image");
+      }
     }
-
-    console.log(post);
-    Axios.post('/posts',post).then(function(response){
-      console.log(response);
-    });
-    props.onHide();
-    history.push("/");
-  }
     return (
     <Modal
     {...props}
