@@ -100,10 +100,10 @@ function deletep(e){
 // console.log(commentlist);
   return (
     <>  
-    <Modal {...props}   size="lg" animation={false}  centered >
+    <Modal {...props} className="commentModal"  size="lg" animation={false}  centered >
      
       <Modal.Header closeButton onClick={close}>
-        <Modal.Title>Post Detail Page</Modal.Title>
+        <Modal.Title style={{color:"white"}}>Post Detail Page</Modal.Title>
       </Modal.Header>
       <Grid container spacing={2}>
       <Grid  item xs={6} >
@@ -141,7 +141,7 @@ function deletep(e){
       <Form.Text style={{color:'green'}}>
           {message!=""?message:''}
           </Form.Text>
-     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+     <List sx={{ width: '100%', maxWidth: 360 }}>
     {props.entry.userinfo==loggedInUser && commentlist?
     commentlist.map((comment)=>(
   

@@ -641,16 +641,25 @@ label {
 }
 .titleText{
   font-size: 30px;
+  color:white;
   font-family: 'Spartan', sans-serif;
   padding: 3% 0 1% 0;
+}
+.secondaryText{
+  color: white;
 }
 .commentForm{
   margin-top: 3%;
 }
 .buttonText{
   font-family: 'Spartan', sans-serif;
+  color:white;
   margin-top:2px;
 }
 .commentBox{
   margin:2% 10% 5% 0;
+}
+.commentModal .modal-content{
+  background-color: #333333;
+  /* color: #fff; */
 }
