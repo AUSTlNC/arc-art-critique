@@ -143,7 +143,7 @@ async function Googlelogin(event){
   <Button onClick={Googlelogin} className="loginbut" variant='light' size="lg" style={{fontSize:"1.5rem",minWidth:'100%',padding:0,position:'static'}}>
   <div style={{display:'inline'}}>
     <img style={{height:'25px',width:"25px",float:"left",display:"inline"}} src={GoogleLogo}></img>
-    <span className="buttonText">Sign in with Google</span>
+    <span className="bT">Sign in with Google</span>
     </div>
     {/* Sign in with Google */}
   </Button>

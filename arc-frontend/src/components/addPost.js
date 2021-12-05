@@ -108,7 +108,7 @@ function AddPost(props){
           className = "filepond--item "
           files={files}
           onupdatefiles={setFiles}
-          allowMultiple={true}
+          allowMultiple={false}
           maxFiles={1}
           server="/posts/temp"
           name="files"

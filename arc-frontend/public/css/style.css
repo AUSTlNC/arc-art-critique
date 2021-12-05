@@ -601,7 +601,7 @@ label {
 .texto{
   font-size: 2rem;
 }
-.buttonText {
+.bT {
   color: #4285f4;
   font-weight: bolder;
   position: static;
@@ -663,3 +663,6 @@ label {
   background-color: #333333;
   /* color: #fff; */
 }
+/* .commentList{
+  background-color:white;
+} */

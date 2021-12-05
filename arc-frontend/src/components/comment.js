@@ -103,7 +103,7 @@ function deletep(e){
     <Modal {...props} className="commentModal"  size="lg" animation={false}  centered >
      
       <Modal.Header closeButton onClick={close}>
-        <Modal.Title style={{color:"white"}}>Post Detail Page</Modal.Title>
+        
       </Modal.Header>
       <Grid container spacing={2}>
       <Grid  item xs={6} >
@@ -145,22 +145,25 @@ function deletep(e){
     {props.entry.userinfo==loggedInUser && commentlist?
     commentlist.map((comment)=>(
   
-      <ListItem style={{paddingLeft:0}} alignItems="flex-start">
+      <ListItem  style={{paddingLeft:0}} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
         </ListItemAvatar>
         <ListItemText
-          primary="anonymous user"r
+        className="commentList"
+          primary="----------------"
           secondary={
             <React.Fragment>
               <Typography
                 sx={{ display: 'inline' }}
                 component="span"
                 variant="body2"
-                color="text.primary"
+                color="text.secondary"
+                style={{color:"white"}}
               >
+          {comment.comment}
               </Typography>
-              {comment.comment}
+             
             </React.Fragment>
           }
         />

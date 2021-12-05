@@ -51,7 +51,7 @@ console.log(props.iamge);
     setLoading(true);
 console.log('loading more');
     setIndex(index+10);
-    setdimage(displayimage.slice(0,index+4));
+    setdimage(displayimage.slice(0,index+6));
     console.log(index);
     console.log(dimage);
     setIsFetching(false)

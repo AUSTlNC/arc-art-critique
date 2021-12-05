@@ -7,7 +7,6 @@ margin:6%;
 }
 
 #photoID{
-
   /*display:flex;*/
   height: 4rem;
   font-size: 25px;
@@ -15,13 +14,7 @@ margin:6%;
 }
 
 #description{
-  /*display:flex;*/
-  /* line-height: 1.2;
-  font-size:18px;
-  height:200px; */
    width: 25rem;
-  
-
 }
 .right{
   padding-right: 3%;
@@ -82,8 +75,6 @@ margin:6%;
   border-bottom: 2px solid black;
   padding-bottom: 5px;
 }
-
-
 
 ::placeholder{
   color: black;
