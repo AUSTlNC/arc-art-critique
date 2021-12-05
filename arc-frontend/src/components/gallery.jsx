@@ -92,6 +92,7 @@ console.log('loading more');
     setdimage(props.image.slice(0,index));
     console.log(dimage);
     setLoading(false);
+    
   },[props.image]
   );
 
